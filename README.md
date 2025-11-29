@@ -2,6 +2,11 @@
 
 A comprehensive, feature-rich Project Dashboard Web App built with Next.js, TypeScript, and modern web technologies.
 
+## Links
+
+- GitHub: https://github.com/ibrahimeltbakh/ProjectHub.git
+- Live : https://project-hub-olive.vercel.app/
+
 ## 🚀 Features
 
 ### ✅ Authentication & Role Management

@@ -124,10 +124,6 @@ export default function ProjectsTable({ projects = [] }: ProjectsTableProps) {
       {
         onSuccess: () => {
           setEditingCell(null);
-          toast.success("Project updated successfully");
-        },
-        onError: () => {
-          toast.error("Failed to update project");
         },
       }
     );

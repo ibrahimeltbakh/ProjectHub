@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProjects, ProjectType } from "./projectsFunctions";
+import { getProjects } from "./projectsFunctions";
+import { ProjectType } from "@/types/general";
 
 export const useProjects = () => {
   return useQuery<ProjectType[], Error>({

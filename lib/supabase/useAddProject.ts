@@ -1,12 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addProject, ProjectType } from "./projectsFunctions";
+import { addProject } from "./projectsFunctions";
 import toast from "react-hot-toast";
+import { ProjectType } from "@/types/general";
 
 export const useAddProject = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (project: ProjectType) => addProject(project),
+    mutationFn: (project: Omit<ProjectType, "id">) => addProject(project),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["projects"],

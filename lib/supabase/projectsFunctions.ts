@@ -1,14 +1,5 @@
 import { supabase } from "../supabaseClient";
-
-export type ProjectType = {
-  id?: string;
-  name: string;
-  status?: string;
-  start_date?: string;
-  end_date?: string;
-  progress?: number;
-  budget?: number;
-};
+import { ProjectType } from "../../types/general";
 
 export const getProjects = async (): Promise<ProjectType[]> => {
   const { data, error } = await supabase

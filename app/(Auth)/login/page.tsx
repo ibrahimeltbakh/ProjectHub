@@ -61,12 +61,12 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex">
-      <div className="w-full bg-gradient-to-br from-gray-600 to-gray-800 md:w-1/2 flex items-center justify-center p-8">
+      <div className="w-full bg-linear-to-br from-gray-600 to-gray-800 md:w-1/2 flex items-center justify-center p-8">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={formAnimation}
-          className="w-full max-w-md bg-white bg-gradient-to-b from-slate-700 to-slate-900 p-8 rounded-xl shadow-lg space-y-6">
+          className="w-full max-w-md bg-white bg-linear-to-b from-slate-700 to-slate-900 p-8 rounded-xl shadow-lg space-y-6">
           <motion.h2
             variants={inputAnimation}
             className="text-3xl font-extrabold text-center text-blue-400">
@@ -110,7 +110,7 @@ export default function Login() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading}
-              className={`w-full py-3 px-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold rounded-md shadow-lg ${
+              className={`w-full py-3 px-4 bg-linear-to-r from-sky-500 to-blue-600 text-white font-bold rounded-md shadow-lg ${
                 loading
                   ? "opacity-75 cursor-not-allowed"
                   : "hover:from-sky-600 hover:to-blue-700"
@@ -150,11 +150,23 @@ export default function Login() {
           backgroundImage:
             'url("https://images.unsplash.com/photo-1616763355603-9755a640a287?auto=format&fit=crop&w=1470&q=80")',
         }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-sky-800/40"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-blue-500/30 to-sky-800/40"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-12">
-          <h2 className="text-4xl font-bold mb-4">Join Our Community</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            Welcome Back to ProjectHub
+          </h2>
           <p className="text-xl mb-6 max-w-lg text-center">
-            Unlock exclusive discounts, fast checkout, and order history.
+            Sign in to access your projects, manage tasks, and stay on top of
+            your workflow.
+          </p>
+        </div>
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-12">
+          <h2 className="text-4xl font-bold mb-4">
+            Welcome Back to ProjectHub
+          </h2>
+          <p className="text-xl mb-6 max-w-lg text-center">
+            Sign in to access your projects, manage tasks, and stay on top of
+            your workflow.
           </p>
         </div>
       </motion.div>

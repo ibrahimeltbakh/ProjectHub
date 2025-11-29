@@ -61,8 +61,9 @@ export const registerThunk = createAsyncThunk<
     }
   }
 );
-
 export const getUser = (): User | null => {
+  if (typeof window === "undefined") return null;
+
   const user = localStorage.getItem("user");
   if (!user) return null;
 
@@ -75,27 +76,45 @@ export const getUser = (): User | null => {
 };
 
 const initialState: AuthState = {
-  user: getUser(),
+  user: null,
   loading: false,
   error: null,
 };
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
     logout: (state) => {
       state.user = null;
-      localStorage.removeItem("user");
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+      }
+    },
+
+    setUserFromStorage: (state) => {
+      if (typeof window !== "undefined") {
+        const stored = localStorage.getItem("user");
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          state.user = {
+            ...parsed,
+            role: getRoleFromEmail(parsed.email),
+          };
+        }
+      }
     },
   },
+
   extraReducers: (builder) => {
     builder.addCase(loginThunk.pending, (state) => {
       state.loading = true;
       state.error = null;
     });
+
     builder.addCase(loginThunk.fulfilled, (state, action) => {
       state.loading = false;
-
       const backendUser = action.payload.user;
 
       const customUser = {
@@ -104,9 +123,11 @@ const authSlice = createSlice({
       };
 
       state.user = customUser;
-      localStorage.setItem("user", JSON.stringify(customUser));
 
-      localStorage.setItem("token", action.payload.token);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("user", JSON.stringify(customUser));
+        localStorage.setItem("token", action.payload.token);
+      }
     });
 
     builder.addCase(loginThunk.rejected, (state, action) => {
@@ -118,9 +139,11 @@ const authSlice = createSlice({
       state.loading = true;
       state.error = null;
     });
+
     builder.addCase(registerThunk.fulfilled, (state) => {
       state.loading = false;
     });
+
     builder.addCase(registerThunk.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload as string;
@@ -128,6 +151,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, setUserFromStorage } = authSlice.actions;
 
 export default authSlice.reducer;

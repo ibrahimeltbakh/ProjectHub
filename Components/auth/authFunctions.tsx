@@ -172,7 +172,6 @@ export const RenderRegularInput: React.FC<RegularInputProps> = ({
   </motion.div>
 );
 
-// Fields
 export const registerFields: FormField[] = [
   { icon: FaUser, name: "name", type: "text", placeholder: "Full Name" },
   {

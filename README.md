@@ -17,20 +17,19 @@ A comprehensive, feature-rich Project Dashboard Web App built with Next.js, Type
 
 ### 🔐 Test Accounts
 
-👨‍💼 Manager Account
-please login using
-Email: manager@gmail.com
-Password: Manager2025
-🧑‍💼 Admin Account
-please login using
-Email: admin@gmail.com
-Password: Admin2025
-
-👨‍💻 Developer Account
-You can sign up with any email & password
-Or use existing Developer account:
-Email: hemasamireltbakh@gmail.com
-Password: Hema2025
+###👨‍💼 Manager Account
+- please login using
+- Email: manager@gmail.com
+- Password: Manager2025
+###🧑‍💼 Admin Account
+- please login using
+- Email: admin@gmail.com
+- Password: Admin2025
+###👨‍💻 Developer Account
+- You can sign up with any email & password
+- Or use existing Developer account:
+- Email: hemasamireltbakh@gmail.com
+- Password: Hema2025
 
 ### ✅ Dashboard Page
 
@@ -89,7 +88,7 @@ Password: Hema2025
 
 ```bash
 git clone https://github.com/ibrahimeltbakh/ProjectHub.git
-cd projectsmanagementsystem
+
 ```
 
 2. Install dependencies:

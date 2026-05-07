@@ -24,12 +24,12 @@ A comprehensive, feature-rich Project Dashboard Web App built with Next.js, Type
 ###🧑‍💼 Admin Account
 - please login using
 - Email: admin@gmail.com
-- Password: Admin2025
+- Password: Admin2026
 ###👨‍💻 Developer Account
 - You can sign up with any email & password
 - Or use existing Developer account:
-- Email: hemasamireltbakh@gmail.com
-- Password: Hema2025
+- Email: ahmed@gmail.com
+- Password: Ahmed2025
 
 ### ✅ Dashboard Page
 
